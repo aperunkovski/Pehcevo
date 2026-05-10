@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="mk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Локални Продукти | Feel Pehcevo</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+    <div class="nav-wrapper">
+        <div class="logo">
+            <a href="index.html"><img src="img/logofooter.png" alt="Logo"></a>
+        </div>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Почетна</a></li>
+               <li><a href="index.html#categories">Истражи</a></li>
+        <li><a href="index.html#top-locations">Топ Локации</a></li>
+                <li><a href="services.html">Услуги</a></li>
+            </ul>
+        </nav>
+
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+    <section class="hero-page">
+        <h1>Локални Продукти</h1>
+        <p>Автентични малешевски приказни спакувани во уникатни производи.</p>
+        <a href="#content" class="scroll-indicator">
+            <span>Истражи</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+   <section> <div id="content" class="container">
+        <div class="grid">
+
+            <div class="category-card">
+                <img src="img/dimnik.png" alt="Dim-Nik">
+                <div class="card-content">
+                    <h3>Дим-Ник Пчеларство</h3>
+                    <p>Мед од недопрената малешевска природа.</p>
+                    <button class="btn-outline" onclick="openModal(this)" data-title="Дим-Ник Пчеларство"
+                        data-tag="Гастрономија / Продукти"
+                        data-desc="Приказната за Дим-Ник започнува длабоко во малешевските шуми. Со генерации, љубовта кон природата ја преточуваме во уникатни вкусови."
+                        data-loc="Пехчево" data-phone="+389 76 370 213" data-img1="img/dimnik1.jpg"
+                        data-img2="img/dimnik2.jpg" data-img3="img/dimnik3.jpg">Дознај повеќе</button>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <img src="img/zokiart.png" alt="Бојчовски Арт">
+                <div class="card-content">
+                    <h3>Бојчовски Арт</h3>
+                    <p>Уметничка обработка на малешевско дрво.</p>
+                    <button class="btn-outline" onclick="openModal(this)" data-title="Бојчовски Арт"
+                        data-tag="Традиција / Ракотворби"
+                        data-desc="Негуваме традиција на рачна резба во дрво, пренесувана низ генерации. Секое парче е изработено со внимание, трпение и почит кон природниот материјал, создавајќи уникатни дела со душа."
+                        data-loc="Пехчево" data-phone="+389 71 333 444" data-img1="img/bojcovskimain.jpg"
+                        data-img2="img/bojcovski1.jpg" data-img3="img/bojcovski3.jpg">Дознај повеќе</button>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <img src="img/rizovski.png" alt="Rizovski">
+                <div class="card-content">
+                    <h3>Пчеларство Ризовски</h3>
+                    <p>Планински мед и органски пчелни производи.</p>
+                    <button class="btn-outline" onclick="openModal(this)" data-title="Пчеларство Ризовски"
+                        data-tag="Пчеларство / Здрава храна"
+                        data-desc="Во срцето на Малешевијата, нашиот пчеларник создава мед со автентичен вкус, благодарение на чистата природа и богатата флора. Секој производ е резултат на природен баланс и внимателна грижа."
+                        data-loc="Пехчево" data-phone="+389 76 355 810" data-img1="img/rizovski1.jpg"
+                        data-img2="img/rizovski2.jpg" data-img3="img/rizovski3.jpg">Дознај повеќе</button>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <img src="img/andonovski.png" alt="Andonovski">
+                <div class="card-content">
+                    <h3>Андоновски Фарма</h3>
+                    <p>Домашно малешевско сирење по вековна рецептура.</p>
+                    <button class="btn-outline" onclick="openModal(this)" data-title="Андоновски Про Фарма"
+                        data-tag="Млечни производи"
+                        data-desc="Нудиме свежи и природни млечни производи. Секој производ е направен со внимание и грижа, по традиционални рецепти и современи стандарди. Благодарение на чистата планинска средина, вкусот е природен, богат и автентичен. "
+                        data-loc="Пехчево" data-phone="+389 78 777 888" data-img1="img/cheese-main.jpg"
+                        data-img2="img/cheese-1.jpg" data-img3="img/cheese-2.jpg">Дознај повеќе</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div id="aModal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="close-modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            
+            <div class="modal-left">
+                <div class="main-img-box" onclick="toggleZoom(true)">
+                    <img src="" id="mImg">
+                </div>
+                <div class="thumb-grid" id="mThumbs"></div>
+            </div>
+
+            <div class="modal-right">
+                <h2 id="mTitle"></h2>
+                
+                <div id="dynamic-info" class="info-grid"></div>
+                
+                <div class="contact-row">
+                    <div class="c-card">
+                        <i class="fas fa-phone"></i>
+                        <p id="mTel"></p>
+                    </div>
+                    <div class="c-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p id="mLoc"></p>
+                    </div>
+                </div>
+
+                <div class="action-area">
+                    <div class="icon-box"><i class="fas fa-info-circle"></i></div>
+                    <button class="btn-reserve">Дознај повеќе</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="zoomOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:10001; display:none; justify-content:center; align-items:center; cursor:zoom-out;" onclick="toggleZoom(false)">
+        <img src="" id="zoomImg" style="max-width:90%; max-height:90%; object-fit:contain;">
+    </div>
+
+    <footer class="main-footer">
+    <div class="footer-glass-wrap">
+        <div class="container-fluid">
+            <div class="footer-content-row">
+                
+                <div class="footer-brand-wrap">
+                    <a href="#" class="footer-logo"> 
+                        <img src="img/logofooter.png" alt="Pehcevo Logo">
+                    </a>
+                    <p class="brand-tagline-low">Вашата следна авантура започнува во срцето на Малешевските планини.</p>
+                </div>
+
+                <div class="footer-social-wrap">
+                    <span class="social-label">Следете нè</span>
+                    <div class="social-icons">
+                        <a href="#" class="social-btn">
+                            <img src="img/facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="#" class="social-btn">
+                            <img src="img/world-wide-web.svg" alt="Website">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 PEHCEVO TOURISM. ALL RIGHTS RESERVED.</p>
+                
+                <a href="#" target="_blank" class="designer-link-class">
+                    DESIGNED BY <span>ATANASKO PERUNKOVSKI</span>
+                </a>
+
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="main.js"></script>
+</body>
+
+</html>

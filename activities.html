@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="mk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities | Explore Pehcevo</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="nav-wrapper">
+        <div class="logo">
+            <a href="index.html"><img src="img/logofooter.png" alt="Logo"></a>
+        </div>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Почетна</a></li>
+                <li><a href="index.html#categories">Истражи</a></li>
+                <li><a href="index.html#top-locations">Топ Локации</a></li>
+                <li><a href="services.html">Услуги</a></li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<section class="hero-page" style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img/activitieshero.jpg');">
+    <div class="container">
+        <h1>Активности</h1>
+        <p>Откријте ги природните реткости и авантуристичките патеки на Пехчево.</p>
+    </div>
+    <a href="#content" class="scroll-indicator">
+        <span>Истражи</span>
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</section>
+
+<section id="content">
+    <div class="container">
+        <div class="grid">
+
+            <article class="category-card">
+                <img src="img/vodopad2.jpeg" alt="Waterfalls">
+                <div class="card-content">
+                    <h3>Пехчевски Водопади</h3>
+                    <p>Искусете ја моќта на седумте малешевски водопади.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Природен Феномен"
+                        data-title="Пехчевски Водопади"
+                        data-desc="Оваа патека ве води низ густа борова шума директно до седумте водопади на Равна Река. Местото е идеално за разладување и уживање во недопрената природа."
+                        data-loc="Равна Река" 
+                        data-weight="Лесна патека" 
+                        data-time="Април - Октомври" 
+                        data-gear="Спортска опрема"
+                        data-imgs="img/vodopad2.jpeg">Дознај повеќе</button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/ezerce.jpg" alt="Ezerce">
+                <div class="card-content">
+                    <h3>Езерце Парк</h3>
+                    <p>Рекреативен центар за целото семејство.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Рекреација"
+                        data-title="Езерце Парк"
+                        data-desc="Локалитетот Езерце нуди уредени патеки, детско игралиште и места за одмор. Совршена дестинација за лесна прошетка по ручекот."
+                        data-loc="Пехчево" 
+                        data-weight="Многу лесно" 
+                        data-time="Цела година" 
+                        data-gear="Секојдневна"
+                        data-imgs="img/ezerce.jpg">Дознај повеќе</button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/vrtenaskala.jpg" alt="Vrtena Skala">
+                <div class="card-content">
+                    <h3>Вртена Скала</h3>
+                    <p>Мистична карпа со неверојатна форма.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Геологија / Легенда"
+                        data-title="Вртена Скала"
+                        data-desc="Уникатна карпеста формација со огромен отвор. Според легендите, ова место има исцелителна моќ за оние кои ќе поминат низ неа."
+                        data-loc="Пехчевски регион" 
+                        data-weight="Средна тежина" 
+                        data-time="Пролет / Есен" 
+                        data-gear="Планинарска"
+                        data-imgs="img/vrtenaskala.jpg">Дознај повеќе</button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/ravnareka3.jpg" alt="Ravna Reka">
+                <div class="card-content">
+                    <h3>Равна Река</h3>
+                    <p>Срцето на туризмот во Пехчево.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Туристичка Зона"
+                        data-title="Равна Река"
+                        data-desc="Најпознатата туристичка населба опкружена со високи борови. Воздухот тука е познат како природен лек за дишните патишта."
+                        data-loc="10км од центар" 
+                        data-weight="Многу пристапно" 
+                        data-time="Цела година" 
+                        data-gear="Секојдневна"
+                        data-imgs="img/ravnareka3.jpg">Дознај повеќе</button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/edukativen.jpg" alt="Negrevo">
+                <div class="card-content">
+                    <h3>Едукативен Центар</h3>
+                    <p>Центар за едукација и заштита на природата.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Екологија"
+                        data-title="Едукативен центар Негрево"
+                        data-desc="Интерактивен простор за запознавање со флората и фауната на Малешевијата, сместен во автентична околина во с. Негрево."
+                        data-loc="с. Негрево" 
+                        data-weight="Пристапно" 
+                        data-time="По најава" 
+                        data-gear="Никаква"
+                        data-imgs="img/edukativen.jpg">Дознај повеќе</button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/svpetka.jpg" alt="St. Petka">
+                <div class="card-content">
+                    <h3>Манастир Св. Петка</h3>
+                    <p>Духовно светилиште над градот.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Религија / Историја"
+                        data-title="Манастир Св. Петка"
+                        data-desc="Манастирски комплекс кој нуди мир и духовно спокојство. Од дворот на манастирот се пружа најубавиот поглед кон градот Пехчево."
+                        data-loc="Рид над градот" 
+                        data-weight="Лесна" 
+                        data-time="Цела година" 
+                        data-gear="Пристојна облека"
+                        data-imgs="img/svpetka.jpg">Дознај повеќе</button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/petko.jpg" alt="Petko">
+                <div class="card-content">
+                    <h3>Патеката на Петко</h3>
+                    <p>Едукативна патека за најмладите.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Детска Патека"
+                        data-title="Патеката на Петко"
+                        data-desc="Едукативна патека наменета за деца каде низ забавни табли учат како да ја сакаат и чуваат природата и животните."
+                        data-loc="Равна Река" 
+                        data-weight="Многу лесна" 
+                        data-time="Мај - Септември" 
+                        data-gear="Спортска"
+                        data-imgs="img/petko.jpg">Дознај повеќе</button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/judovi.jpg" alt="Judovi Livadi">
+                <div class="card-content">
+                    <h3>Јудови Ливади</h3>
+                    <p>Живеалиште на инсектојадната Росичка.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Ретка Флора"
+                        data-title="Јудови Ливади"
+                        data-desc="Заштитено подрачје каде расте ретката инсектојадна билка Росичка. Локалитет со специфична микроклима и природна вредност."
+                        data-loc="Близу с. Негрево" 
+                        data-weight="Лесна" 
+                        data-time="Јуни - Август" 
+                        data-gear="Водоотпорни обувки"
+                        data-imgs="img/judovi.jpg">Дознај повеќе</button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/kadiica.webp" alt="Kadiica">
+                <div class="card-content">
+                    <h3>Врв Кадиица</h3>
+                    <p>Највисокиот врв на Влаина планина.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Авантура"
+                        data-title="Врв Кадиица"
+                        data-desc="Искуство за вистински планинари. Кадиица нуди поглед од 360 степени кој ги опфаќа сите околни планини и поширокиот регион."
+                        data-loc="Влаина Планина" 
+                        data-weight="Тешка (1932м)" 
+                        data-time="Мај - Октомври" 
+                        data-gear="Целосна планинарска"
+                        data-imgs="img/kadiica.webp">Дознај повеќе</button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/bukovik.jpg" alt="Bukovik">
+                <div class="card-content">
+                    <h3>Вулканска купа Буковик</h3>
+                    <p>Истражете го древниот вулкански конус.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Геолошко Наследство"
+                        data-title="Вулканска купа Буковик"
+                        data-desc="Остаток од древна вулканска активност. Ретко геолошко наоѓалиште богато со специфични карпи и минерали."
+                        data-loc="Околина на Пехчево" 
+                        data-weight="Средна" 
+                        data-time="Цела година" 
+                        data-gear="Планинарска"
+                        data-imgs="img/bukovik.jpg">Дознај повеќе</button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/kukuljeto (1) (1).jpg" alt="Kukuljeto">
+                <div class="card-content">
+                    <h3>Кукуљето</h3>
+                    <p>Природни камени скулптури.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Природна Уметност"
+                        data-title="Кукуљето"
+                        data-desc="Земјени пирамиди создадени од ерозија кои со векови пркосат на времето. Локалитет со надреална убавина."
+                        data-loc="15км од Пехчево" 
+                        data-weight="Средна" 
+                        data-time="Пролет / Есен" 
+                        data-gear="Спортска"
+                        data-imgs="img/kukuljeto (1) (1).jpg">Дознај повеќе</button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/crnickimelovi.jpg" alt="Crnicki Melovi">
+                <div class="card-content">
+                    <h3>Црнички Мелови</h3>
+                    <p>Спектакуларни земјени пирамиди.</p>
+                    <button class="btn-outline" onclick="openActivityModal(this)" 
+                        data-category="Ерозивен Феномен"
+                        data-title="Црнички Мелови"
+                        data-desc="Еден од најголемите предели со земјени мелови на Балканот. Вертикални црвеникави карпи кои создаваат драматичен пејзаж."
+                        data-loc="с. Црник" 
+                        data-weight="Лесна" 
+                        data-time="Цела година" 
+                        data-gear="Секојдневна"
+                        data-imgs="img/crnickimelovi.jpg">Дознај повеќе</button>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<div id="aModal" class="modal-overlay">
+    <div class="modal-container">
+        <button class="close-modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
+        <div class="modal-left">
+            <div class="main-img-box" onclick="toggleZoom(true)"><img src="" id="mImg"></div>
+            <div class="thumb-grid" id="mThumbs"></div>
+        </div>
+        <div class="modal-right">
+            <h2 id="mTitle"></h2>
+            <div id="dynamic-info" class="info-grid"></div>
+            <div class="contact-row">
+                <div class="c-card"><i class="fas fa-phone"></i><p id="mTel">Инфо: 033 441 321</p></div>
+                <div class="c-card"><i class="fas fa-map-marker-alt"></i><p id="mLoc"></p></div>
+            </div>
+            <div class="action-area">
+                <div class="icon-box"><i class="fas fa-hiking"></i></div>
+                <button class="btn-reserve">Посети локација</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="zoomOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:10001; display:none; justify-content:center; align-items:center; cursor:zoom-out;" onclick="toggleZoom(false)">
+    <img src="" id="zoomImg" style="max-width:90%; max-height:90%; object-fit:contain;">
+</div>
+<footer class="main-footer">
+    <div class="footer-glass-wrap">
+        <div class="container-fluid">
+            <div class="footer-content-row">
+                
+                <div class="footer-brand-wrap">
+                    <a href="#" class="footer-logo"> 
+                        <img src="img/logofooter.png" alt="Pehcevo Logo">
+                    </a>
+                    <p class="brand-tagline-low">Вашата следна авантура започнува во срцето на Малешевските планини.</p>
+                </div>
+
+                <div class="footer-social-wrap">
+                    <span class="social-label">Следете нè</span>
+                    <div class="social-icons">
+                        <a href="#" class="social-btn">
+                            <img src="img/facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="#" class="social-btn">
+                            <img src="img/world-wide-web.svg" alt="Website">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 PEHCEVO TOURISM. ALL RIGHTS RESERVED.</p>
+                
+                <a href="#" target="_blank" class="designer-link-class">
+                    DESIGNED BY <span>ATANASKO PERUNKOVSKI</span>
+                </a>
+
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

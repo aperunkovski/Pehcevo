@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="mk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feel Pehčevo | Услуги</title>
+
+
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+     <header class="header">
+    <div class="nav-wrapper">
+        <div class="logo">
+            <a href="index.html"><img src="img/logofooter.png" alt="Logo"></a>
+        </div>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Почетна</a></li>
+               <li><a href="index.html#categories">Истражи</a></li>
+        <li><a href="index.html#top-locations">Топ Локации</a></li>
+                <li><a href="services.html">Услуги</a></li>
+            </ul>
+        </nav>
+
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="sub-title">Сè што ви е потребно</span>
+                <h2 class="main-title">Градски <span>Услуги</span></h2>
+            </div>
+
+            <div class="services-modern-grid">
+                <div class="service-horizontal-card" onclick="openServiceModal('pharmacy')">
+                    <div class="service-vector-space"><img src="img/pharmacy.svg"></div>
+                    <div class="service-info">
+                        <h3>Аптеки</h3>
+                        <p>Медицинска поддршка 24/7</p>
+                    </div>
+                </div>
+
+                <div class="service-horizontal-card" onclick="openServiceModal('market')">
+                    <div class="service-vector-space"><img src="img/shopping-cart.svg"></div>
+                    <div class="service-info">
+                        <h3>Маркети</h3>
+                        <p>Најдобрите локални маркети</p>
+                    </div>
+                </div>
+
+                <div class="service-horizontal-card" onclick="openServiceModal('car')">
+                    <div class="service-vector-space"><img src="img/maintenance.svg"></div>
+                    <div class="service-info">
+                        <h3>Автосервиси</h3>
+                        <p>Брза и сигурна поправка</p>
+                    </div>
+                </div>
+
+                <div class="service-horizontal-card" onclick="openServiceModal('barber')">
+                    <div class="service-vector-space"><img src="img/hairdressing-scissors.svg"></div>
+                    <div class="service-info">
+                        <h3>Салони</h3>
+                        <p>Професионална грижа и стил</p>
+                    </div>
+                </div>
+
+                <div class="service-horizontal-card" onclick="openServiceModal('atm')">
+                    <div class="service-vector-space"><img src="img/atm.svg"></div>
+                    <div class="service-info">
+                        <h3>Банкомати</h3>
+                        <p>Лесен пристап до готовина</p>
+                    </div>
+                </div>
+
+                <div class="service-horizontal-card" onclick="openServiceModal('post')">
+                    <div class="service-vector-space"><img src="img/envelop.svg"></div>
+                    <div class="service-info">
+                        <h3>Пошта</h3>
+                        <p>Поштенски и карго услуги</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="service-modal" class="service-modal">
+        <div class="modal-container-relative">
+            <span class="close-modal" onclick="closeServiceModal()"><i class="fas fa-times"></i></span>
+            <div class="modal-content">
+                <div class="modal-header-wrap">
+                    <img src="" id="modal-header-icon">
+                    <h2 id="modal-category-title" class="modal-header-title">Наслов</h2>
+                </div>
+                <div id="location-cards-container" class="location-cards-wrapper">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="main-footer">
+    <div class="footer-glass-wrap">
+        <div class="container-fluid">
+            <div class="footer-content-row">
+                
+                <div class="footer-brand-wrap">
+                    <a href="#" class="footer-logo"> 
+                        <img src="img/logofooter.png" alt="Pehcevo Logo">
+                    </a>
+                    <p class="brand-tagline-low">Вашата следна авантура започнува во срцето на Малешевските планини.</p>
+                </div>
+
+                <div class="footer-social-wrap">
+                    <span class="social-label">Следете нè</span>
+                    <div class="social-icons">
+                        <a href="#" class="social-btn">
+                            <img src="img/facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="#" class="social-btn">
+                            <img src="img/world-wide-web.svg" alt="Website">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 PEHCEVO TOURISM. ALL RIGHTS RESERVED.</p>
+                
+                <a href="#" target="_blank" class="designer-link-class">
+                    DESIGNED BY <span>ATANASKO PERUNKOVSKI</span>
+                </a>
+
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>"main.js"</script>
+</body>
+
+
+</html>

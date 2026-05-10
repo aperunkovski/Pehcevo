@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гастрономија | Feel Pehcevo</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-wrapper">
+            <div class="logo">
+                <a href="index.html"><img src="img/logofooter.png" alt="Logo"></a>
+            </div>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="index.html">Почетна</a></li>
+                    <li><a href="index.html#categories">Истражи</a></li>
+                    <li><a href="index.html#top-locations">Топ Локации</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                </ul>
+            </nav>
+            <div class="burger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-page">
+        <h1>Гастрономија</h1>
+        <p>Уживајте во автентичните вкусови и традиционалните пехчевски специјалитети.</p>
+        <a href="#content" class="scroll-indicator">
+            <span>Истражи</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <section id="content">
+        <div class="grid">
+            <article class="category-card">
+                <img src="img/tropik-1.jpg">
+                <div class="card-content">
+                    <h3>Ресторан Тропик</h3>
+                    <p>Врвна услуга и најдобрата пастрмка во регионот.</p>
+                    <button class="btn-outline" onclick="openModal(this)" 
+                        data-category="Ресторан / Специјалитети"
+                        data-title="Ресторан Тропик"
+                        data-cuisine="Риба / Скара " 
+                        data-work="08:00 - 00:00" 
+                        data-terace="Покриена" 
+                        data-card="Кеш / Картичка"
+                        data-loc="ул. Орце Николов, Пехчево"
+                        data-tel="+389 71 326 662"
+                        data-imgs="img/tropik-1.jpg,img/tropik2.jpg,img/tropik3.jpg,img/tropik4.jpg,img/tropik5.jpg,img/tropik6.jpg">
+                        Дознај повеќе
+                    </button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/Viktorija-3.jpg">
+                <div class="card-content">
+                    <h3>Ресторан Викторија</h3>
+                    <p>Автентична македонска кујна во срцето на градот.</p>
+                    <button class="btn-outline" onclick="openModal(this)" 
+                        data-category="Ресторан / Традиција"
+                        data-title="Ресторан Викторија"
+                        data-cuisine="Скара / Традиционална"
+                        data-work="08:00 - 00:00" 
+                        data-terace="Покриена" 
+                        data-card="Кеш / Картичка"
+                        data-loc="ул. Истра, Пехчево"
+                        data-tel="+389 33 511 961"
+                        data-imgs="img/v4.jpeg,img/v2.jpeg,img/v6.jpeg,img/v1.jpeg,img/v5.jpeg,img/v3.jpeg">
+                        Дознај повеќе
+                    </button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/ristovo.webp">
+                <div class="card-content">
+                    <h3>Ристово Меанче</h3>
+                    <p>Уживајте во традиционалните пехчевски специјалитети.</p>
+                    <button class="btn-outline" onclick="openModal(this)" 
+                        data-category="Меана / Етно амбиент"
+                        data-title="Ристово Меанче"
+                        data-cuisine="Домашни јадења / Скара"
+                        data-work="08:00 - 23:00" 
+                        data-terace="Отворена" 
+                        data-card="Кеш / Картичка"
+                        data-loc="ул. Маршал Тито, Пехчево"
+                        data-tel="+389 33 441 440"
+                        data-imgs="img/r1.jpg,img/r2.jpg,img/r3.jpg,img/r4.jpg,img/r5.jpg,img/r6.jpg">
+                        Дознај повеќе
+                    </button>
+                </div>
+            </article>
+
+            <article class="category-card">
+                <img src="img/goldsendvicara.jpeg">
+                <div class="card-content">
+                    <h3>Сендвичара Голд</h3>
+                    <p>Највкусната брза храна за секој дел од денот.</p>
+                    <button class="btn-outline" onclick="openModal(this)" 
+                        data-category="Брза Храна"
+                        data-title="Сендвичара Голд"
+                        data-cuisine="Бургери / Тостови"
+                        data-work="08:00 - 00:00" 
+                        data-terace="Нема" 
+                        data-card="Само кеш" 
+                        data-loc="ул. Даме Груев, Пехчево" 
+                        data-tel="+389 78 123 321"
+                        data-imgs="img/a1.jpg,img/a2.jpg,img/a3.jpg,img/a4.jpg,img/a5.jpg,img/a6.jpg">
+                        Дознај повеќе
+                    </button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div id="aModal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="close-modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            
+            <div class="modal-left">
+                <div class="main-img-box" onclick="toggleZoom(true)">
+                    <img src="" id="mImg">
+                </div>
+                <div class="thumb-grid" id="mThumbs"></div>
+            </div>
+
+            <div class="modal-right">
+                <span id="mCat" class="modal-category"></span>
+                <h2 id="mTitle"></h2>
+                
+                <div id="dynamic-info" class="info-grid">
+                    <div class="info-item">
+                        <div class="item-header"><i class="fas fa-utensils"></i> <span>Кујна</span></div>
+                        <strong id="mCuisine"></strong>
+                    </div>
+                    <div class="info-item">
+                        <div class="item-header"><i class="fas fa-clock"></i> <span>Работно време</span></div>
+                        <strong id="mWork"></strong>
+                    </div>
+                    <div class="info-item">
+                        <div class="item-header"><i class="fas fa-sun"></i> <span>Тераса</span></div>
+                        <strong id="mTerace"></strong>
+                    </div>
+                    <div class="info-item">
+                        <div class="item-header"><i class="fas fa-credit-card"></i> <span>Плаќање</span></div>
+                        <strong id="mCard"></strong>
+                    </div>
+                </div>
+                
+                <div class="contact-row">
+                    <div class="c-card">
+                        <i class="fas fa-phone"></i>
+                        <p id="mTel"></p>
+                    </div>
+                    <div class="c-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p id="mLoc"></p>
+                    </div>
+                </div>
+
+                <div class="action-area">
+                    <div class="icon-box"><i class="fas fa-utensils"></i></div>
+                    <button class="btn-reserve" id="resBtn">Резервирај маса</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="zoomOverlay" onclick="toggleZoom(false)" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:10001; display:none; justify-content:center; align-items:center;">
+        <img src="" id="zoomImg" style="max-width:90%; max-height:90%; object-fit:contain;">
+    </div>
+
+    <footer class="main-footer">
+    <div class="footer-glass-wrap">
+        <div class="container-fluid">
+            <div class="footer-content-row">
+                
+                <div class="footer-brand-wrap">
+                    <a href="#" class="footer-logo"> 
+                        <img src="img/logofooter.png" alt="Pehcevo Logo">
+                    </a>
+                    <p class="brand-tagline-low">Вашата следна авантура започнува во срцето на Малешевските планини.</p>
+                </div>
+
+                <div class="footer-social-wrap">
+                    <span class="social-label">Следете нè</span>
+                    <div class="social-icons">
+                        <a href="#" class="social-btn">
+                            <img src="img/facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="#" class="social-btn">
+                            <img src="img/world-wide-web.svg" alt="Website">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 PEHCEVO TOURISM. ALL RIGHTS RESERVED.</p>
+                
+                <a href="#" target="_blank" class="designer-link-class">
+                    DESIGNED BY <span>ATANASKO PERUNKOVSKI</span>
+                </a>
+
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="main.js"></script>
+</body>
+</html>

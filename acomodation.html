@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="mk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Pehcevo | Accommodation</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+     <header class="header">
+    <div class="nav-wrapper">
+        <div class="logo">
+            <a href="index.html"><img src="img/logofooter.png" alt="Logo"></a>
+        </div>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Почетна</a></li>
+               <li><a href="index.html#categories">Истражи</a></li>
+        <li><a href="index.html#top-locations">Топ Локации</a></li>
+                <li><a href="services.html">Услуги</a></li>
+            </ul>
+        </nav>
+
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+
+    <section class="hero-page">
+        <h1>Сместување</h1>
+        <p>Најдете го вашето идеално катче за одмор во природата на Пехчево.</p>
+        <a href="#content" class="scroll-indicator">
+            <span>Истражи</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <div class="grid" id="content">
+        <article class="category-card">
+            <img src="img/kim.jpg">
+            <div class="card-content">
+                <h3>Апартмани Ким</h3>
+                <p>Луксузно сместување во срцето на градот.</p>
+                <button class="btn-outline" onclick="openModal(this)" 
+                    data-title="Апартмани Ким" 
+                    data-cap="4 Лица"
+                    data-park="Приватен паркинг" 
+                    data-in="Од 14:00" 
+                    data-out="До 11:00"
+                    data-loc="ул. Маршал Тито, Пехчево" 
+                    data-tel="+389 78 441 743"
+                    data-imgs="img/kim.jpg,img/kim3.jpg,img/kim4.jpg,img/kim8.jpg,img/kim6.webp,img/kim7.webp">Дознај повеќе</button>
+            </div>
+        </article>
+
+        <article class="category-card">
+            <img src="img/tropik-apartmani.jpg">
+            <div class="card-content">
+                <h3>Апартмани Тропик</h3>
+                <p>Удобност и мир за вашиот идеален одмор.</p>
+                <button class="btn-outline" onclick="openModal(this)" 
+                    data-title="Апартмани Тропик" 
+                    data-cap="20 лица"
+                    data-park="Приватен паркинг" 
+                    data-in="Од 14:00" 
+                    data-out="До 12:00"
+                    data-loc="ул. Орце Николов, Пехчево" 
+                    data-tel="+389 72 224 256"
+                    data-imgs="img/tropik-apartmani.jpg,img/tropikapartmani2.jpg,img/tropikapartmani3.jpg,img/tropikapartman7.jpg,img/tropikapartman4.jpg,img/tropikapartman5.jpg">Дознај повеќе</button>
+            </div>
+        </article>
+
+        <article class="category-card">
+            <img src="img/river1.avif">
+            <div class="card-content">
+                <h3>Вила River</h3>
+                <p>Лоцирана покрај реката со прекрасен поглед.</p>
+                <button class="btn-outline" onclick="openModal(this)" 
+                    data-title="Вила River" 
+                    data-cap="8 Лица"
+                    data-park="Паркинг и двор" 
+                    data-in="12:00" 
+                    data-out="До 11:00" 
+                    data-loc="ул. Првомајска, Пехчево"
+                    data-tel="+389 70 355 566"
+                    data-imgs="img/river1.avif,img/river2.avif,img/river3.avif,img/river4.avif,img/river5.avif,img/river6.avif">Дознај повеќе</button>
+            </div>
+        </article>
+
+        <article class="category-card">
+            <img src="img/chodosova.jpg">
+            <div class="card-content">
+                <h3>Чодосова Колиба</h3>
+                <p>Традиционален стил во срцето на планината.</p>
+                <button class="btn-outline" onclick="openModal(this)" 
+                    data-title="Чодосова Колиба" 
+                    data-cap="8 Лица"
+                    data-park="Во природа" 
+                    data-in="14:00" 
+                    data-out="До 12:00" 
+                    data-loc="Равна Река, Пехчево"
+                    data-tel="+389 75 235 159"
+                    data-imgs="img/chodosova.jpg,img/codosova1.jpg,img/codosova6.png,img/codosova3.jpg,img/codosova4.jpg,img/codosova5.jpg">Дознај повеќе</button>
+            </div>
+        </article>
+    </div>
+
+<div id="aModal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="close-modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            
+            <div class="modal-left">
+                <div class="main-img-box" onclick="toggleZoom(true)">
+                    <img src="" id="mImg">
+                </div>
+                <div class="thumb-grid" id="mThumbs"></div>
+            </div>
+
+            <div class="modal-right">
+                <h2 id="mTitle"></h2>
+                
+                <div id="dynamic-info" class="info-grid"></div>
+                
+                <div class="contact-row">
+                    <div class="c-card">
+                        <i class="fas fa-phone"></i>
+                        <p id="mTel"></p>
+                    </div>
+                    <div class="c-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p id="mLoc"></p>
+                    </div>
+                </div>
+
+                <div class="action-area">
+                    <div class="icon-box"><i class="fas fa-bed"></i></div>
+                    <button class="btn-reserve">Резервирај сместување</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="zoomOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:10001; display:none; justify-content:center; align-items:center; cursor:zoom-out;" onclick="toggleZoom(false)">
+        <img src="" id="zoomImg" style="max-width:90%; max-height:90%; object-fit:contain;">
+    </div>
+
+    <footer class="main-footer">
+    <div class="footer-glass-wrap">
+        <div class="container-fluid">
+            <div class="footer-content-row">
+                
+                <div class="footer-brand-wrap">
+                    <a href="#" class="footer-logo"> 
+                        <img src="img/logofooter.png" alt="Pehcevo Logo">
+                    </a>
+                    <p class="brand-tagline-low">Вашата следна авантура започнува во срцето на Малешевските планини.</p>
+                </div>
+
+                <div class="footer-social-wrap">
+                    <span class="social-label">Следете нè</span>
+                    <div class="social-icons">
+                        <a href="#" class="social-btn">
+                            <img src="img/facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="#" class="social-btn">
+                            <img src="img/world-wide-web.svg" alt="Website">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 PEHCEVO TOURISM. ALL RIGHTS RESERVED.</p>
+                
+                <a href="#" target="_blank" class="designer-link-class">
+                    DESIGNED BY <span>ATANASKO PERUNKOVSKI</span>
+                </a>
+
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="main.js"></script>
+</body>
+</html>
