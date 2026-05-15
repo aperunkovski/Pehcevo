@@ -1,5 +1,9 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -436,7 +440,8 @@ body {
   transform: translateY(0);
   color: #e8c547;
 }
-.categories .card:hover .card-content p, .categories .card:hover .card-content .btn-outline {
+.categories .card:hover .card-content p,
+.categories .card:hover .card-content .btn-outline {
   opacity: 1;
   transform: translateY(0);
 }
@@ -652,7 +657,8 @@ body {
     gap: 20px;
   }
 }
-.main-footer .footer-bottom .copyright, .main-footer .footer-bottom .legal-links a {
+.main-footer .footer-bottom .copyright,
+.main-footer .footer-bottom .legal-links a {
   font-size: 10px;
   color: rgba(255, 255, 255, 0.25);
   text-transform: uppercase;
@@ -1034,12 +1040,13 @@ body.modal-open {
 }
 .modal-right h2 {
   font-family: "Outfit", sans-serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;
   margin: 0 0 25px;
   color: #ffffff;
   line-height: 1.2;
+  padding-bottom: 20px;
 }
 
 /* ИНФО КАРТИЧКИ */
@@ -1083,7 +1090,7 @@ body.modal-open {
 
 /* КОНТАКТ И АКЦИЈА */
 .contact-row {
-  margin-top: auto;
+  margin-top: 40px;
 }
 
 .c-card {
@@ -1112,7 +1119,7 @@ body.modal-open {
 
 .action-area {
   display: flex;
-  margin-top: 15px;
+  margin-top: 40px;
 }
 
 .icon-box {
@@ -1182,7 +1189,9 @@ body.modal-open {
   display: block;
   color: #e8c547;
 }
-.modal-container.activity-mode .modal-right .contact-row, .modal-container.activity-mode .modal-right .action-area, .modal-container.activity-mode .modal-right .c-card {
+.modal-container.activity-mode .modal-right .contact-row,
+.modal-container.activity-mode .modal-right .action-area,
+.modal-container.activity-mode .modal-right .c-card {
   display: none !important;
 }
 
@@ -1232,165 +1241,10 @@ body.modal-open {
   color: #e8c547;
 }
 
-.services-section {
-  padding: 180px 0 100px;
-  background-color: #0a2717;
-}
-.services-section .section-title-wrap {
-  text-align: center;
-  margin-bottom: 80px;
-}
-.services-section .section-title-wrap .sub-title {
-  color: #e8c547;
-  text-transform: uppercase;
-  letter-spacing: 7px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  display: block;
-}
-.services-section .section-title-wrap .main-title {
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-.services-section .section-title-wrap .main-title span {
-  color: #e8c547;
-}
-.services-section .services-modern-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 25px;
-}
-.services-section .service-horizontal-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  padding: 30px;
-  cursor: pointer;
-  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.services-section .service-horizontal-card:hover {
-  border-color: #e8c547;
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.05);
-}
-.services-section .service-horizontal-card .service-vector-space {
-  width: 50px;
-  margin-right: 25px;
-  flex-shrink: 0;
-}
-.services-section .service-horizontal-card .service-vector-space img {
-  width: 100%;
-  filter: invert(83%) sepia(21%) saturate(1028%) hue-rotate(1deg) brightness(95%) contrast(92%);
-}
-.services-section .service-horizontal-card .service-info h3 {
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.services-section .service-horizontal-card .service-info p {
-  font-family: "Times New Roman", serif;
-  font-size: 1rem;
-  color: #a0a0a0;
-}
-
-.service-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.service-modal.active {
-  display: flex !important;
-}
-.service-modal .modal-container-relative {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-}
-.service-modal .modal-content {
-  background: #0a2717;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 60px 40px;
-  width: 100%;
-  border-radius: 4px;
-}
-
-@media (max-width: 768px) {
-  .header {
-    height: 70px;
-  }
-  .header .nav-wrapper {
-    padding: 0 20px;
-  }
-  .header #navMenu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background: #081210;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .header #navMenu.active {
-    right: 0;
-  }
-  .header #navMenu ul {
-    flex-direction: column;
-    gap: 50px;
-  }
-  .header #navMenu ul li a {
-    font-size: 1.5rem;
-  }
-  .header .burger {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    z-index: 1200;
-  }
-  .header .burger span {
-    width: 28px;
-    height: 3px;
-    background: #fff;
-    transition: 0.3s ease;
-  }
-  .header .burger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 6px);
-  }
-  .header .burger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .header .burger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -6px);
-  }
-  .services-section .main-title {
-    font-size: 2.2rem;
-  }
-  .service-modal .modal-content {
-    padding: 40px 20px;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-}
 @media (max-width: 768px) {
   /* =========================================================
-     GLOBAL
-     ========================================================= */
+   GLOBAL
+   ========================================================= */
   *,
   *::before,
   *::after {
@@ -1432,8 +1286,8 @@ body.modal-open {
     display: block;
   }
   /* =========================================================
-     HEADER / BURGER
-     ========================================================= */
+   HEADER / BURGER
+   ========================================================= */
   .header {
     height: 72px;
     width: 100vw;
@@ -1507,8 +1361,8 @@ body.modal-open {
     text-align: center;
   }
   /* =========================================================
-     HERO
-     ========================================================= */
+   HERO
+   ========================================================= */
   .hero {
     height: 92vh;
     padding-bottom: 60px;
@@ -1532,8 +1386,8 @@ body.modal-open {
     text-align: center;
   }
   /* =========================================================
-     ABOUT
-     ========================================================= */
+   ABOUT
+   ========================================================= */
   .about {
     padding: 70px 0;
   }
@@ -1606,8 +1460,8 @@ body.modal-open {
     }
   }
   /* =========================================================
-     CATEGORIES
-     ========================================================= */
+   CATEGORIES
+   ========================================================= */
   .categories {
     padding: 70px 0;
   }
@@ -1620,7 +1474,7 @@ body.modal-open {
     flex-direction: row !important;
     overflow-x: auto;
     overflow-y: hidden;
-    gap: 16px;
+    gap: 20px;
     padding: 10px 16px 20px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -1669,8 +1523,8 @@ body.modal-open {
     transform: translateY(0);
   }
   /* =========================================================
-     TOP LOCATIONS
-     ========================================================= */
+   TOP LOCATIONS
+   ========================================================= */
   .top-locations {
     padding: 70px 0;
   }
@@ -1716,8 +1570,8 @@ body.modal-open {
     }
   }
   /* =========================================================
-     SERVICES
-     ========================================================= */
+   SERVICES
+   ========================================================= */
   .services-section {
     padding: 120px 0 70px;
   }
@@ -1745,8 +1599,8 @@ body.modal-open {
     font-size: 0.88rem;
   }
   /* =========================================================
-     FOOTER FIX
-     ========================================================= */
+   FOOTER FIX
+   ========================================================= */
   .main-footer .footer-glass-wrap {
     padding: 40px 0 20px;
   }
@@ -1799,15 +1653,15 @@ body.modal-open {
 }
 @media (max-width: 768px) {
   /* =========================================================
-     MODAL CONTAINER
-     ========================================================= */
+   MODAL CONTAINER
+   ========================================================= */
   .modal-overlay {
-    padding: 10px;
+    padding: 6px;
   }
   .modal-container {
     width: 100%;
     max-width: 100%;
-    max-height: 92vh;
+    max-height: 96vh;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -1826,24 +1680,24 @@ body.modal-open {
     }
   }
   /* =========================================================
-     CLOSE BUTTON
-     ========================================================= */
+   CLOSE BUTTON
+   ========================================================= */
   .close-modal {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 12px;
+    right: 12px;
     background: #e8c547;
     border: 1px solid #e8c547;
     color: #000;
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     border-radius: 0;
     cursor: pointer;
     z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     box-shadow: 0 8px 18px rgba(232, 197, 71, 0.25);
     transition: 0.3s ease;
@@ -1855,15 +1709,15 @@ body.modal-open {
     transform: rotate(90deg);
   }
   /* =========================================================
-     LEFT SIDE
-     ========================================================= */
+   LEFT SIDE
+   ========================================================= */
   .modal-left {
     width: 100%;
     height: auto;
   }
   .main-img-box {
     width: 100%;
-    height: 240px;
+    height: 170px;
   }
   .main-img-box img {
     width: 100%;
@@ -1872,11 +1726,11 @@ body.modal-open {
        object-fit: cover;
   }
   /* =========================================================
-     THUMBNAILS
-     ========================================================= */
+   THUMBNAILS
+   ========================================================= */
   .thumb-grid {
     width: 100%;
-    height: 78px;
+    height: 58px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
@@ -1886,7 +1740,7 @@ body.modal-open {
   }
   .thumb-grid img {
     width: 100%;
-    height: 78px;
+    height: 58px;
     -o-object-fit: cover;
        object-fit: cover;
     cursor: pointer;
@@ -1897,227 +1751,626 @@ body.modal-open {
     opacity: 1;
   }
   /* =========================================================
-     RIGHT SIDE
-     ========================================================= */
+   RIGHT SIDE
+   ========================================================= */
   .modal-right {
     width: 100%;
-    padding: 24px 16px 18px;
+    padding: 18px 14px 14px;
     overflow-y: auto;
   }
   .modal-right h2 {
-    font-size: 1.25rem;
-    line-height: 1.25;
-    margin-bottom: 18px;
-    padding-right: 42px;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    padding-right: 38px;
   }
   /* =========================================================
-     INFO GRID
-     ========================================================= */
+   INFO GRID
+   ========================================================= */
   .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 18px;
+    gap: 8px;
+    margin-bottom: 14px;
   }
   .info-item {
-    min-height: 82px;
-    padding: 12px;
+    min-height: 68px;
+    padding: 10px;
     border-left: 2px solid #e8c547;
   }
   .info-item i {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
   }
   .info-item span {
-    font-size: 0.55rem;
+    font-size: 0.5rem;
     margin-bottom: 2px;
   }
   .info-item strong {
-    font-size: 0.8rem;
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+  /* =========================================================
+   CONTACT
+   ========================================================= */
+  .contact-row {
+    margin-top: 6px;
+  }
+  .c-card {
+    padding: 8px 10px;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .c-card p {
+    font-size: 0.72rem;
     line-height: 1.35;
   }
   /* =========================================================
-     CONTACT
-     ========================================================= */
-  .contact-row {
-    margin-top: 8px;
-  }
-  .c-card {
-    padding: 10px 12px;
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-  .c-card p {
-    font-size: 0.78rem;
-    line-height: 1.4;
-  }
-  /* =========================================================
-     ACTION AREA
-     ========================================================= */
+   ACTION AREA
+   ========================================================= */
   .action-area {
     display: flex;
-    margin-top: 14px;
+    margin-top: 10px;
   }
   .icon-box {
-    width: 50px;
-    height: 48px;
+    width: 46px;
+    height: 44px;
   }
   .btn-reserve {
-    height: 48px;
-    font-size: 0.75rem;
+    height: 44px;
+    font-size: 0.7rem;
     letter-spacing: 1px;
-    padding: 0 12px;
+    padding: 0 10px;
   }
   /* =========================================================
-     ACTIVITY MODE
-     ========================================================= */
+   ACTIVITY MODE
+   ========================================================= */
   .modal-container.activity-mode .modal-left {
     width: 100%;
   }
   .modal-container.activity-mode .modal-left .main-img-box {
-    height: 250px !important;
+    height: 160px !important;
   }
   .modal-container.activity-mode .modal-left .thumb-grid {
     display: none !important;
   }
   .modal-container.activity-mode .modal-right {
     width: 100%;
-    padding: 24px 16px;
+    padding: 18px 14px;
   }
   .modal-container.activity-mode .modal-right h2 {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
   }
   .modal-container.activity-mode .modal-right .activity-description {
-    font-size: 0.88rem;
-    line-height: 1.7;
-    margin-bottom: 18px;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    margin-bottom: 14px;
   }
   .modal-container.activity-mode .modal-right .info-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
+/* =====================
+   SERVICES
+===================== */
+.services-section {
+  padding: 180px 0 100px;
+}
+.services-section .section-title-wrap {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.services-section .sub-title {
+  color: #e8c547;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: block;
+}
+.services-section .main-title {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.services-section .main-title span {
+  color: #e8c547;
+}
+.services-section .services-modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 25px;
+}
+
+.service-horizontal-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+.service-horizontal-card:hover {
+  border-color: #e8c547;
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+.service-horizontal-card .service-vector-space {
+  width: 50px;
+  margin-right: 25px;
+  flex-shrink: 0;
+}
+.service-horizontal-card .service-vector-space img {
+  width: 100%;
+  filter: invert(83%) sepia(21%) saturate(1028%) hue-rotate(1deg) brightness(95%) contrast(92%);
+}
+.service-horizontal-card .service-info h3 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.service-horizontal-card .service-info p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #a0a0a0;
+}
+
+/* =====================
+   MODAL
+===================== */
+.service-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.service-modal .modal-container-relative {
+  position: relative;
+  width: 100%;
+  max-width: 950px;
+}
+.service-modal .modal-content {
+  position: relative;
+  background: #0a2717;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 60px 40px 40px;
+  overflow: hidden;
+}
+.service-modal {
+  /* CLOSE BUTTON */
+  /* =====================
+     SERVICES
+  ===================== */
+}
+.service-modal .services-section {
+  padding: 180px 0 100px;
+}
+.service-modal .services-section .section-title-wrap {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.service-modal .services-section .sub-title {
+  color: #e8c547;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: block;
+}
+.service-modal .services-section .main-title {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.service-modal .services-section .main-title span {
+  color: #e8c547;
+}
+.service-modal .services-section .services-modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 25px;
+}
+.service-modal .service-horizontal-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+.service-modal .service-horizontal-card:hover {
+  border-color: #e8c547;
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+.service-modal .service-horizontal-card .service-vector-space {
+  width: 50px;
+  margin-right: 25px;
+  flex-shrink: 0;
+}
+.service-modal .service-horizontal-card .service-vector-space img {
+  width: 100%;
+  filter: invert(83%) sepia(21%) saturate(1028%) hue-rotate(1deg) brightness(95%) contrast(92%);
+}
+.service-modal .service-horizontal-card .service-info h3 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.service-modal .service-horizontal-card .service-info p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #a0a0a0;
+}
+.service-modal {
+  /* =====================
+     MODAL
+  ===================== */
+}
+.service-modal .service-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.service-modal .service-modal .modal-container-relative {
+  position: relative;
+  width: 100%;
+  max-width: 950px;
+}
+.service-modal .service-modal .modal-content {
+  position: relative;
+  background: #0a2717;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 60px 40px 40px;
+  overflow: hidden;
+}
+.service-modal .service-modal {
+  /* CLOSE BUTTON */
+}
+.service-modal .service-modal .close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #e8c547;
+  border: none;
+  color: #000;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  font-size: 20px;
+  font-weight: 700;
+}
+.service-modal .service-modal .close-modal:hover {
+  background: #fff;
+  color: #000;
+  transform: rotate(90deg);
+}
+.service-modal .service-modal .modal-header-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.service-modal .service-modal .modal-header-wrap img {
+  width: 42px;
+  filter: invert(83%) sepia(21%) saturate(1028%) hue-rotate(1deg) brightness(95%) contrast(92%);
+}
+.service-modal .service-modal .modal-header-wrap .modal-header-title {
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.service-modal .service-modal .modal-header-wrap .modal-header-title span {
+  color: #e8c547;
+}
+.service-modal .service-modal .location-cards-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.service-modal .service-modal {
+  /* LOCATION CARD */
+}
+.service-modal .service-modal .location-entry-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(232, 197, 71, 0.15);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 380px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.35s ease;
+}
+.service-modal .service-modal .location-entry-card:hover {
+  border-color: rgba(232, 197, 71, 0.5);
+  transform: translateY(-5px);
+}
+.service-modal .service-modal .location-entry-card .loc-img {
+  height: 220px;
+}
+.service-modal .service-modal .location-entry-card .loc-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.service-modal .service-modal .location-entry-card .loc-content {
+  padding: 25px;
+  text-align: center;
+  border-top: 2px solid #e8c547;
+}
+.service-modal .service-modal .location-entry-card .loc-content h4 {
+  color: #e8c547;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+.service-modal .service-modal .location-entry-card .loc-content p {
+  color: #cfcfcf;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+.service-modal .service-modal .location-entry-card .loc-content strong {
+  display: block;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+.service-modal {
+  /* =====================
+     RESPONSIVE
+  ===================== */
+}
 @media (max-width: 768px) {
-  /* =========================================================
-     HERO PAGE
-     ========================================================= */
-  .hero-page {
-    height: 460px;
-    padding: 0 22px;
-    overflow: hidden;
+  .service-modal .services-section {
+    padding: 140px 0 80px;
   }
-  .hero-page h1 {
-    font-size: 12vw;
-    line-height: 1.05;
-    letter-spacing: -1px;
-    max-width: 100%;
-    word-break: break-word;
+  .service-modal .services-section .section-title-wrap {
+    margin-bottom: 50px;
   }
-  .hero-page p {
-    font-size: 15px;
-    line-height: 1.6;
-    padding: 0 10px;
-    margin-top: 14px;
-    max-width: 95%;
+  .service-modal .services-section .main-title {
+    font-size: 2.3rem;
+    line-height: 1.2;
   }
-  .scroll-indicator {
-    bottom: 22px;
+  .service-modal .services-section .services-modern-grid {
+    grid-template-columns: 1fr;
   }
-  .scroll-indicator i {
-    font-size: 1.2rem;
+  .service-modal .service-horizontal-card {
+    padding: 22px;
   }
-  /* =========================================================
-     GRID
-     ========================================================= */
-  .grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 22px;
-    padding: 50px 18px;
-    overflow: hidden;
+  .service-modal .service-horizontal-card .service-vector-space {
+    width: 42px;
+    margin-right: 18px;
   }
-  /* =========================================================
-     CARD
-     ========================================================= */
-  .category-card {
-    width: 92%;
-    max-width: 340px;
-    height: 450px;
-    overflow: hidden;
-    transform: translateY(40px) scale(0.96);
-    opacity: 0;
-    animation: smoothCardReveal 0.7s ease forwards;
-  }
-  .category-card:nth-child(1) {
-    animation-delay: 0.05s;
-  }
-  .category-card:nth-child(2) {
-    animation-delay: 0.12s;
-  }
-  .category-card:nth-child(3) {
-    animation-delay: 0.19s;
-  }
-  .category-card:nth-child(4) {
-    animation-delay: 0.26s;
-  }
-  .category-card:nth-child(5) {
-    animation-delay: 0.33s;
-  }
-  .category-card:nth-child(6) {
-    animation-delay: 0.4s;
-  }
-  .category-card img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center;
-    transition: 0.7s ease;
-  }
-  .category-card .card-content {
-    height: 100px;
-    padding: 18px 18px 8px;
-    backdrop-filter: blur(14px);
-    transition: 0.45s ease;
-  }
-  .category-card h3 {
+  .service-modal .service-horizontal-card .service-info h3 {
     font-size: 1.05rem;
-    letter-spacing: 1.5px;
+  }
+  .service-modal .service-horizontal-card .service-info p {
+    font-size: 0.9rem;
+  }
+  .service-modal .service-modal {
+    padding: 15px;
+  }
+  .service-modal .service-modal .modal-content {
+    padding: 55px 20px 25px;
+    overflow: visible;
+  }
+  .service-modal .service-modal .modal-header-wrap {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .service-modal .service-modal .modal-header-wrap img {
+    width: 34px;
+  }
+  .service-modal .service-modal .modal-header-wrap .modal-header-title {
+    font-size: 1.5rem;
     line-height: 1.3;
   }
-  .category-card p {
-    font-size: 0.92rem;
-    line-height: 1.6;
+  .service-modal .service-modal .close-modal {
+    width: 38px;
+    height: 38px;
+    top: 12px;
+    right: 12px;
+    font-size: 18px;
   }
-  .category-card:hover img {
-    transform: scale(1.08);
+  .service-modal .service-modal .location-cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
   }
-  .category-card:hover .card-content {
-    padding: 25px;
+  .service-modal .service-modal .location-entry-card {
+    max-width: 330px;
   }
-  .category-card:hover h3 {
-    margin-bottom: 14px;
+  .service-modal .service-modal .location-entry-card .loc-img {
+    height: 180px;
   }
-  /* =========================================================
-     BUTTON
-     ========================================================= */
-  .btn-outline {
-    padding: 10px 20px;
-    font-size: 0.7rem;
-    letter-spacing: 1.5px;
+  .service-modal .service-modal .location-entry-card .loc-content {
+    padding: 20px;
   }
-  /* =========================================================
-     SMOOTH SCROLL REVEAL
-     ========================================================= */
-  @keyframes smoothCardReveal {
-    from {
-      opacity: 0;
-      transform: translateY(45px) scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+  .service-modal .service-modal .location-entry-card .loc-content h4 {
+    font-size: 0.95rem;
+  }
+  .service-modal .service-modal .location-entry-card .loc-content p {
+    font-size: 0.88rem;
+  }
+  .service-modal .service-modal .location-entry-card .loc-content strong {
+    font-size: 0.9rem;
+  }
+}
+.service-modal .modal-header-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.service-modal .modal-header-wrap img {
+  width: 42px;
+  filter: invert(83%) sepia(21%) saturate(1028%) hue-rotate(1deg) brightness(95%) contrast(92%);
+}
+.service-modal .modal-header-wrap .modal-header-title {
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.service-modal .modal-header-wrap .modal-header-title span {
+  color: #e8c547;
+}
+.service-modal .location-cards-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+}
+.service-modal .location-entry-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  max-width: 380px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+}
+.service-modal .location-entry-card:hover {
+  border-color: rgba(232, 197, 71, 0.4);
+  transform: translateY(-4px);
+}
+.service-modal .location-entry-card .loc-img {
+  height: 190px;
+}
+.service-modal .location-entry-card .loc-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.service-modal .location-entry-card .loc-content {
+  padding: 25px;
+  border-top: 2px solid #e8c547;
+  text-align: center;
+}
+.service-modal .location-entry-card .loc-content h4 {
+  color: #e8c547;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+.service-modal .location-entry-card .loc-content p {
+  color: #bbb;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.service-modal .location-entry-card .loc-content strong {
+  color: #fff;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 140px 0 80px;
+  }
+  .services-section .section-title-wrap {
+    margin-bottom: 50px;
+  }
+  .services-section .main-title {
+    font-size: 2.3rem;
+    line-height: 1.2;
+  }
+  .services-section .services-modern-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-horizontal-card {
+    padding: 22px;
+  }
+  .service-horizontal-card .service-vector-space {
+    width: 42px;
+    margin-right: 18px;
+  }
+  .service-horizontal-card .service-info h3 {
+    font-size: 1.05rem;
+  }
+  .service-horizontal-card .service-info p {
+    font-size: 0.9rem;
+  }
+  .service-modal {
+    padding: 15px;
+  }
+  .service-modal .modal-content {
+    padding: 55px 20px 25px;
+    overflow: visible;
+  }
+  .service-modal .modal-header-wrap {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+  .service-modal .modal-header-wrap img {
+    width: 34px;
+  }
+  .service-modal .modal-header-wrap .modal-header-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  .service-modal .location-cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .service-modal .location-entry-card {
+    width: 100%;
+    max-width: 330px;
+    min-height: auto;
+  }
+  .service-modal .location-entry-card .loc-img {
+    height: 170px;
+  }
+  .service-modal .location-entry-card .loc-content {
+    padding: 20px;
+  }
+  .service-modal .close-modal {
+    width: 34px;
+    height: 34px;
+    top: 12px;
+    right: 12px;
+    font-size: 18px;
   }
 }/*# sourceMappingURL=main.css.map */

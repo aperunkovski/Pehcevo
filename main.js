@@ -179,12 +179,93 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+    const serviceData = {
+        'pharmacy': {
+            title: 'Локални <span>Аптеки</span>',
+            icon: 'img/pharmacy.svg',
+            locations: [
+                { name: 'Аптека Арника', img: 'img/arnika.jpeg', hours: '08:00 - 21:00', tel: '+389 33 441 676' },
+                { name: 'Аптека Зегин', img: 'img/zegin.png', hours: '08:00 - 21:00', tel: '+389 33 413 700' }
+            ]
+        },
+        'market': {
+            title: 'Градски <span>Маркети</span>',
+            icon: 'img/shopping-cart.svg',
+            locations: [
+                { name: 'Кит-Го Маркет', img: 'img/kitgo.jpeg', hours: '07:30 - 21:30' },
+                { name: 'Ивел Стојан', img: 'img/ivelstojan.jpeg', hours: '07:00 - 22:00' }
+            ]
+        },
+        'car': {
+            title: 'Авто <span>Сервиси</span>',
+            icon: 'img/maintenance.svg',
+            locations: [
+                { name: 'Автосервис Премиум', img: 'img/ivo.jpg', hours: '08:00 - 17:00', tel: '+389 78 222 431' },
+                { name: 'Вулканизер Методи', img: 'img/service2.jpg', hours: '09:00 - 18:00', tel: '+389 71 888 999' }
+            ]
+        },
+        'barber': {
+            title: 'Нега и <span>Убавина</span>',
+            icon: 'img/hairdressing-scissors.svg',
+            locations: [
+                { name: 'BarberShop Gold', img: 'img/gold.jpg', hours: '10:00 - 21:00', tel: '+389 77 677 348' }
+            ]
+        },
+        'atm': {
+            title: 'Достапни <span>Банкомати</span>',
+            icon: 'img/atm.svg',
+            locations: [
+                { name: 'Стопанска Банка', img: 'img/stopanska.jpeg', hours: '24/7' },
+                { name: 'Комерцијална Банка', img: 'img/atm2.jpg', hours: '24/7' }
+            ]
+        },
+        'post': {
+            title: 'Пошта и <span>Логистика</span>',
+            icon: 'img/envelop.svg',
+            locations: [
+                { name: 'Македонска Пошта', img: 'img/posta.jpeg', hours: '08:00 - 16:00', tel: '+389 33 441 120' },
+                { name: 'Карго Експрес', img: 'img/stajo.jpeg', hours: '09:00 - 17:00', tel: '+389 77 123 456' }
+            ]
+        }
+    };
+
+    function openServiceModal(type) {
+        const data = serviceData[type];
+        document.getElementById('modal-category-title').innerHTML = data.title;
+        document.getElementById('modal-header-icon').src = data.icon;
+
+        const container = document.getElementById('location-cards-container');
+        container.innerHTML = '';
+
+        data.locations.forEach(loc => {
+            let phoneLine = loc.tel ? `<p><i class="fas fa-phone"></i>Контакт: <strong>${loc.tel}</strong></p>` : "";
+
+            container.innerHTML += `
+                <div class="location-entry-card">
+                    <div class="loc-img"><img src="${loc.img}"></div>
+                    <div class="loc-content">
+                        <h4>${loc.name}</h4>
+                        <div class="loc-details">
+                            <p><i class="fas fa-clock"></i>Работно време: <strong>${loc.hours}</strong></p>
+                            ${phoneLine}
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        document.getElementById('service-modal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeServiceModal() {
+        document.getElementById('service-modal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = (e) => { 
+        if (e.target.id == 'service-modal') closeServiceModal(); 
+    }
 
 
-
-
-
-
-
-
-
+    
