@@ -172,33 +172,59 @@
     </div>
         </div>
     </section>
-
 <section class="top-locations" id="top-locations">
     <div class="container">
         <h2>Локални фаворити</h2>
+
         <div class="locations-grid">
-      
-            <div class="loc-item" onclick="openActivity('ravna-reka')">
-                <img src="img/ravnareka3.jpg" alt="Равна Река">
+
+            <div class="loc-item" onclick="openActivityModal(this)"
+                data-category="Пешачење"
+                data-title="Равна Река"
+                data-desc="Равна Река е најпознатата туристичка населба во Пехчево, опкружена со густи борови шуми и чиста планинска вода. Тука се наоѓаат бројни викендички, ресторани и рибници со свежа пастрмка. Местото е идеално за одмор, прошетки и започнување планинарски тури кон околните врвови, нудејќи мир, свеж воздух и автентично планинско доживување."
+                data-loc="Пехчево"
+                data-weight="Лесна"
+                data-time="Пролет - Есен"
+                data-gear="Патики за пешачење"
+                data-imgs="img/ravnareka3.jpg">
+
+                <img src="img/ravnareka3.jpg" alt="">
                 <div class="loc-info">
                     <h4>Равна Река</h4>
                     <span>⭐ 4.9 (50+ препораки)</span>
                 </div>
             </div>
 
-            <div class="loc-item" onclick="openActivity('vrv-kadiica')">
-                <img src="img/kadiica.webp" alt="Врв Кадиица">
+            <div class="loc-item" onclick="openActivityModal(this)"
+                data-category="Планинарење"
+                data-title="Врв Кадиица"
+                data-desc="Врв Кадиица е највисоката точка на Влаина планината и нуди спектакуларен 360-степенски поглед кон целиот регион. Патеката до врвот минува низ пасишта, карпи и планински пејзажи. Иако е физички напорна, наградата е неверојатна панорама и чувство на вистинска планинарска авантура."
+                data-loc="Малешевски Планини"
+                data-weight="Средна"
+                data-time="Мај - Октомври"
+                data-gear="Планинарска опрема"
+                data-imgs="img/kadiica.webp">
+
+                <img src="img/kadiica.webp" alt="">
                 <div class="loc-info">
                     <h4>Врв Кадиица</h4>
                     <span>⭐ 4.8 (70+ препораки)</span>
                 </div>
             </div>
-            
-        
-            <div class="loc-item" onclick="openActivity('pehcevski-vodopadi')">
-                <img src="img/vodopad2.jpeg" alt="Пехчевски Водопад">
+
+            <div class="loc-item" onclick="openActivityModal(this)"
+                data-category="Природна атракција"
+                data-title="Пехчевски Водопади"
+                data-desc="Пехчевските водопади претставуваат една од најубавите природни атракции во Малешевскиот регион, сместени долж течението на реката Брегалница. До нив се стигнува преку уредени планинарски патеки кои минуваат низ густи борови шуми. Звукот на водата и свежиот планински воздух создаваат совршена атмосфера за одмор, фотографирање и уживање во недопрена природа во текот на целата година."
+                data-loc="Пехчево"
+                data-weight="Лесна"
+                data-time="Цела година"
+                data-gear="Удобни обувки"
+                data-imgs="img/vodopad2.jpeg">
+
+                <img src="img/vodopad2.jpeg" alt="">
                 <div class="loc-info">
-                    <h4>Пехчевски Водопад</h4>
+                    <h4>Пехчевски Водопади</h4>
                     <span>⭐ 5.0 (120+ препораки)</span>
                 </div>
             </div>
@@ -206,56 +232,29 @@
         </div>
     </div>
 </section>
-
-<div id="activityModal" class="modal-overlay activity-modal">
+<div id="aModal" class="modal-overlay">
     <div class="modal-container">
-      
-        <button class="close-modal" onclick="closeActivityModal()">×</button>
-        
+        <button class="close-modal" onclick="closeModal()">×</button>
+
         <div class="modal-left">
-            <img src="" id="act-img">
+            <div class="main-img-box" onclick="toggleZoom(true)">
+                <img src="" id="mImg">
+            </div>
+            <div class="thumb-grid" id="mThumbs"></div>
         </div>
-        
+
         <div class="modal-right">
-            <div class="top-content">
-                <span id="act-type" class="activity-type-tag"></span>
-                <h2 id="act-title"></h2>
-                <p id="act-desc" class="activity-desc"></p>
+            <h2 id="mTitle"></h2>
+            <div id="dynamic-info" class="info-grid"></div>
+
+            <div class="contact-row">
+                <div class="c-card"><i class="fas fa-phone"></i><p id="mTel"></p></div>
+                <div class="c-card"><i class="fas fa-map-marker-alt"></i><p id="mLoc"></p></div>
             </div>
 
-            <div class="activity-meta">
-                <!-- Секој елемент сега има контејнер за иконата (векторот) -->
-                <div class="meta-item">
-                    <span>Локација</span>
-                    <div class="meta-value">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <b id="act-location"></b>
-                    </div>
-                </div>
-
-                <div class="meta-item">
-                    <span>Тежина</span>
-                    <div class="meta-value">
-                        <i class="fa-solid fa-mountain"></i>
-                        <b id="act-diff"></b>
-                    </div>
-                </div>
-
-                <div class="meta-item">
-                    <span>Период</span>
-                    <div class="meta-value">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <b id="act-time"></b>
-                    </div>
-                </div>
-
-                <div class="meta-item">
-                    <span>Опрема</span>
-                    <div class="meta-value">
-                        <i class="fa-solid fa-person-hiking"></i>
-                        <b id="act-gear"></b>
-                    </div>
-                </div>
+            <div class="action-area">
+                <div class="icon-box"><i class="fas fa-hiking"></i></div>
+                <button class="btn-reserve">Посети локација</button>
             </div>
         </div>
     </div>
@@ -269,26 +268,34 @@
                     <a href="#" class="footer-logo"> 
                         <img src="img/logofooter.png" alt="Pehcevo Logo">
                     </a>
-                    <p class="brand-tagline-low">Вашата следна авантура започнува во срцето на Малешевските планини.</p>
+                    <p class="brand-tagline-low">
+                        Вашата следна авантура започнува во срцето на Малешевските планини.
+                    </p>
                 </div>
 
                 <div class="footer-social-wrap">
                     <span class="social-label">Следете нè</span>
                     <div class="social-icons">
-                        <a href="#" class="social-btn">
+
+                        <a href="https://www.facebook.com/profile.php?id=100022576123385" target="_blank" rel="noopener noreferrer" class="social-btn">
                             <img src="img/facebook.svg" alt="Facebook">
                         </a>
-                        <a href="#" class="social-btn">
+
+                        <a href="https://pehcevo.gov.mk" target="_blank" rel="noopener noreferrer" class="social-btn">
                             <img src="img/world-wide-web.svg" alt="Website">
                         </a>
+
                     </div>
                 </div>
+
             </div>
 
             <div class="footer-bottom">
-                <p class="copyright">&copy; 2026 PEHCEVO TOURISM. ALL RIGHTS RESERVED.</p>
+                <p class="copyright">
+                    &copy; 2026 PEHCEVO TOURISM. ALL RIGHTS RESERVED.
+                </p>
                 
-                <a href="#" target="_blank" class="designer-link-class">
+                <a href="https://your-link-here.com" target="_blank" rel="noopener noreferrer" class="designer-link-class">
                     DESIGNED BY <span>ATANASKO PERUNKOVSKI</span>
                 </a>
 
@@ -297,10 +304,10 @@
                     <a href="#">Terms of Use</a>
                 </div>
             </div>
+
         </div>
     </div>
 </footer>
-
 <script src="main.js"></script>
 
 </body>

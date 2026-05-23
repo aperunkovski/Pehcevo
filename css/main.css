@@ -359,6 +359,7 @@ body {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 .categories .card::after {
   content: "";
@@ -425,6 +426,15 @@ body {
   opacity: 0;
   transform: translateY(20px);
   transition: 0.4s ease;
+}
+.categories .card .card-content .btn-outline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
 }
 .categories .card:hover {
   border-color: #e8c547;
@@ -553,9 +563,6 @@ body {
 }
 .top-locations .loc-item:hover h4 {
   color: #e8c547;
-}
-.top-locations {
-  /* --- MOBILE OPTIMIZATION --- */
 }
 
 .main-footer {
@@ -762,7 +769,7 @@ body.modal-open {
 }
 @media (max-width: 768px) {
   .hero-page h1 {
-    font-size: 12vw;
+    font-size: 10vw;
   }
 }
 .hero-page p {
@@ -824,6 +831,7 @@ body.modal-open {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 85%;
   }
 }
 
@@ -1174,6 +1182,7 @@ body.modal-open {
 }
 .modal-container.activity-mode .modal-right h2 {
   color: #ffffff;
+  padding-top: 30px;
 }
 .modal-container.activity-mode .modal-right .activity-description {
   color: #ccc;
@@ -1660,7 +1669,7 @@ body.modal-open {
   }
   .modal-container {
     width: 100%;
-    max-width: 100%;
+    max-width: 95%;
     max-height: 96vh;
     height: auto;
     display: flex;
@@ -1759,10 +1768,11 @@ body.modal-open {
     overflow-y: auto;
   }
   .modal-right h2 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     line-height: 1.2;
+    text-align: center;
     margin-bottom: 14px;
-    padding-right: 38px;
+    padding-top: 30px;
   }
   /* =========================================================
    INFO GRID
@@ -1839,11 +1849,13 @@ body.modal-open {
     padding: 18px 14px;
   }
   .modal-container.activity-mode .modal-right h2 {
-    font-size: 1.15rem;
+    font-size: 1.4rem;
   }
   .modal-container.activity-mode .modal-right .activity-description {
     font-size: 0.82rem;
     line-height: 1.55;
+    padding-bottom: 20px;
+    text-align: justify;
     margin-bottom: 14px;
   }
   .modal-container.activity-mode .modal-right .info-grid {
@@ -2303,7 +2315,7 @@ body.modal-open {
 
 /* =====================
    RESPONSIVE
-===================== */
+/* ===================== */
 @media (max-width: 768px) {
   .services-section {
     padding: 140px 0 80px;
@@ -2332,11 +2344,17 @@ body.modal-open {
     font-size: 0.9rem;
   }
   .service-modal {
-    padding: 15px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px);
   }
   .service-modal .modal-content {
     padding: 55px 20px 25px;
     overflow: visible;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
   }
   .service-modal .modal-header-wrap {
     flex-direction: column;
@@ -2351,13 +2369,15 @@ body.modal-open {
     line-height: 1.3;
   }
   .service-modal .location-cards-wrapper {
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: center;
-    gap: 18px;
+    gap: 20px;
+    width: 100%;
+    padding: 0 10px;
   }
   .service-modal .location-entry-card {
-    width: 100%;
-    max-width: 330px;
+    width: 100% !important;
+    max-width: 100%;
     min-height: auto;
   }
   .service-modal .location-entry-card .loc-img {
@@ -2365,6 +2385,12 @@ body.modal-open {
   }
   .service-modal .location-entry-card .loc-content {
     padding: 20px;
+  }
+  .service-modal .location-entry-card .loc-content strong,
+  .service-modal .location-entry-card .loc-content p,
+  .service-modal .location-entry-card .loc-content span {
+    letter-spacing: 0.5px !important;
+    font-family: "Outfit", sans-serif;
   }
   .service-modal .close-modal {
     width: 34px;

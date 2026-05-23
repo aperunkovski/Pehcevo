@@ -389,7 +389,6 @@ $border: rgba(255, 255, 255, 0.1);
 }
 
 
-
 .categories {
     padding: 70px 0;
     background-color: $bg;
@@ -427,10 +426,11 @@ $border: rgba(255, 255, 255, 0.1);
     .card {
         height: 420px;
         background: #000;
-        position: relative;
+        position: relative; // Задолжително за да работи трикот со кликање
         overflow: hidden;
         border: 1px solid $border;
         transition: all 0.5s ease;
+        cursor: pointer; // Дава знак со раче дека цела картичка е за кликање
 
         &::after {
             content: '';
@@ -503,6 +503,17 @@ $border: rgba(255, 255, 255, 0.1);
                 opacity: 0;
                 transform: translateY(20px);
                 transition: 0.4s ease;
+
+                // КЛУЧНИОТ ТРИК: Ова го шири кликот на копчето преку целата картичка
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 5; // Оди најгоре за да ја покрие и сликата во позадина
+                }
             }
         }
 
@@ -541,11 +552,7 @@ $border: rgba(255, 255, 255, 0.1);
     .slider-dots {
         display: none;
     }
-
-
-
 }
-
 
 
 
@@ -666,7 +673,6 @@ $border: rgba(255, 255, 255, 0.1);
         }
     }
 
-    /* --- MOBILE OPTIMIZATION --- */
 
 
 
@@ -928,7 +934,7 @@ body.modal-open {
         line-height: 1;
 
         @media (max-width: 768px) {
-            font-size: 12vw;
+            font-size: 10vw;
         }
     }
 
@@ -998,6 +1004,7 @@ body.modal-open {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 85%;
     }
 }
 
@@ -1392,6 +1399,7 @@ body.modal-open {
 
         h2 {
             color: #ffffff;
+            padding-top: 30px;
         }
 
         .activity-description {
@@ -1813,7 +1821,7 @@ $transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             height: 420px;
 
             scroll-snap-align: center;
-            
+
 
             img {
                 opacity: .8;
@@ -2048,7 +2056,7 @@ $transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     .modal-container {
         width: 100%;
-        max-width: 100%;
+        max-width: 95%;
         max-height: 96vh;
 
         height: auto;
@@ -2190,12 +2198,12 @@ $transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow-y: auto;
 
         h2 {
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             line-height: 1.2;
-
+            text-align: center;
             margin-bottom: 14px;
 
-            padding-right: 38px;
+            padding-top: 30px;
         }
     }
 
@@ -2305,12 +2313,15 @@ $transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             padding: 18px 14px;
 
             h2 {
-                font-size: 1.15rem;
+                font-size: 1.4rem;
+
             }
 
             .activity-description {
                 font-size: .82rem;
                 line-height: 1.55;
+                padding-bottom: 20px;
+                text-align: justify;
 
                 margin-bottom: 14px;
             }
@@ -2444,338 +2455,337 @@ $transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     /* CLOSE BUTTON */
-   /* =====================
+    /* =====================
    SERVICES
 ===================== */
-.services-section {
-    padding: 180px 0 100px;
+    .services-section {
+        padding: 180px 0 100px;
 
-    .section-title-wrap {
-        text-align: center;
-        margin-bottom: 80px;
-    }
+        .section-title-wrap {
+            text-align: center;
+            margin-bottom: 80px;
+        }
 
-    .sub-title {
-        color: #e8c547;
-        text-transform: uppercase;
-        letter-spacing: 7px;
-        font-size: 0.8rem;
-        font-weight: 700;
-        margin-bottom: 12px;
-        display: block;
-    }
-
-    .main-title {
-        font-size: 3.5rem;
-        text-transform: uppercase;
-        font-weight: 900;
-
-        span {
+        .sub-title {
             color: #e8c547;
-        }
-    }
-
-    .services-modern-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-        gap: 25px;
-    }
-}
-
-.service-horizontal-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(8px);
-    display: flex;
-    align-items: center;
-    padding: 30px;
-    cursor: pointer;
-    transition: 0.4s ease;
-
-    &:hover {
-        border-color: #e8c547;
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.05);
-    }
-
-    .service-vector-space {
-        width: 50px;
-        margin-right: 25px;
-        flex-shrink: 0;
-
-        img {
-            width: 100%;
-            filter: invert(83%) sepia(21%) saturate(1028%) hue-rotate(1deg)
-                brightness(95%) contrast(92%);
-        }
-    }
-
-    .service-info {
-        h3 {
-            font-size: 1.3rem;
             text-transform: uppercase;
-            margin-bottom: 4px;
+            letter-spacing: 7px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: block;
         }
 
-        p {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            color: #a0a0a0;
-        }
-    }
-}
-
-/* =====================
-   MODAL
-===================== */
-.service-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(12px);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-
-    .modal-container-relative {
-        position: relative;
-        width: 100%;
-        max-width: 950px;
-    }
-
-    .modal-content {
-        position: relative;
-        background: #0a2717;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 60px 40px 40px;
-        overflow: hidden;
-    }
-
-    /* CLOSE BUTTON */
-    .close-modal {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: #e8c547;
-        border: none;
-        color: #000;
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s ease;
-        font-size: 20px;
-        font-weight: 700;
-
-        &:hover {
-            background: #fff;
-            color: #000;
-            transform: rotate(90deg);
-        }
-    }
-
-    .modal-header-wrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 18px;
-        margin-bottom: 40px;
-        text-align: center;
-
-        img {
-            width: 42px;
-            filter: invert(83%) sepia(21%) saturate(1028%) hue-rotate(1deg)
-                brightness(95%) contrast(92%);
-        }
-
-        .modal-header-title {
-            font-size: 2rem;
+        .main-title {
+            font-size: 3.5rem;
+            text-transform: uppercase;
             font-weight: 900;
-            text-transform: uppercase;
 
             span {
                 color: #e8c547;
             }
         }
-    }
-
-    .location-cards-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: stretch;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    /* LOCATION CARD */
-    .location-entry-card {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(232, 197, 71, 0.15);
-        backdrop-filter: blur(10px);
-        width: 100%;
-        max-width: 380px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        transition: 0.35s ease;
-
-        &:hover {
-            border-color: rgba(232, 197, 71, 0.5);
-            transform: translateY(-5px);
-        }
-
-        .loc-img {
-            height: 220px;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .loc-content {
-            padding: 25px;
-            text-align: center;
-            border-top: 2px solid #e8c547;
-
-            h4 {
-                color: #e8c547;
-                text-transform: uppercase;
-                margin-bottom: 12px;
-                font-size: 1rem;
-                letter-spacing: 1px;
-            }
-
-            p {
-                color: #cfcfcf;
-                font-size: 0.92rem;
-                line-height: 1.8;
-                margin-bottom: 10px;
-            }
-
-            strong {
-                display: block;
-                margin-top: 10px;
-                color: #fff;
-                font-size: 0.95rem;
-                letter-spacing: 1px;
-            }
-        }
-    }
-}
-
-/* =====================
-   RESPONSIVE
-===================== */
-@media (max-width: 768px) {
-
-    .services-section {
-        padding: 140px 0 80px;
-
-        .section-title-wrap {
-            margin-bottom: 50px;
-        }
-
-        .main-title {
-            font-size: 2.3rem;
-            line-height: 1.2;
-        }
 
         .services-modern-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
         }
     }
 
     .service-horizontal-card {
-        padding: 22px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        padding: 30px;
+        cursor: pointer;
+        transition: 0.4s ease;
+
+        &:hover {
+            border-color: #e8c547;
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
 
         .service-vector-space {
-            width: 42px;
-            margin-right: 18px;
+            width: 50px;
+            margin-right: 25px;
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+                filter: invert(83%) sepia(21%) saturate(1028%) hue-rotate(1deg) brightness(95%) contrast(92%);
+            }
         }
 
         .service-info {
             h3 {
-                font-size: 1.05rem;
+                font-size: 1.3rem;
+                text-transform: uppercase;
+                margin-bottom: 4px;
             }
 
             p {
-                font-size: 0.9rem;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                color: #a0a0a0;
             }
         }
     }
 
+    /* =====================
+   MODAL
+===================== */
     .service-modal {
-        padding: 15px;
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(12px);
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+        .modal-container-relative {
+            position: relative;
+            width: 100%;
+            max-width: 950px;
+        }
 
         .modal-content {
-            padding: 55px 20px 25px;
-            overflow: visible;
+            position: relative;
+            background: #0a2717;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 60px 40px 40px;
+            overflow: hidden;
+        }
+
+        /* CLOSE BUTTON */
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e8c547;
+            border: none;
+            color: #000;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s ease;
+            font-size: 20px;
+            font-weight: 700;
+
+            &:hover {
+                background: #fff;
+                color: #000;
+                transform: rotate(90deg);
+            }
         }
 
         .modal-header-wrap {
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 40px;
             text-align: center;
 
             img {
-                width: 34px;
+                width: 42px;
+                filter: invert(83%) sepia(21%) saturate(1028%) hue-rotate(1deg) brightness(95%) contrast(92%);
             }
 
             .modal-header-title {
-                font-size: 1.5rem;
-                line-height: 1.3;
-            }
-        }
+                font-size: 2rem;
+                font-weight: 900;
+                text-transform: uppercase;
 
-        .close-modal {
-            width: 38px;
-            height: 38px;
-            top: 12px;
-            right: 12px;
-            font-size: 18px;
+                span {
+                    color: #e8c547;
+                }
+            }
         }
 
         .location-cards-wrapper {
-            flex-direction: column;
-            align-items: center;
-            gap: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
+        /* LOCATION CARD */
         .location-entry-card {
-            max-width: 330px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(232, 197, 71, 0.15);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 380px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: 0.35s ease;
+
+            &:hover {
+                border-color: rgba(232, 197, 71, 0.5);
+                transform: translateY(-5px);
+            }
 
             .loc-img {
-                height: 180px;
+                height: 220px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
 
             .loc-content {
-                padding: 20px;
+                padding: 25px;
+                text-align: center;
+                border-top: 2px solid #e8c547;
 
                 h4 {
-                    font-size: 0.95rem;
+                    color: #e8c547;
+                    text-transform: uppercase;
+                    margin-bottom: 12px;
+                    font-size: 1rem;
+                    letter-spacing: 1px;
                 }
 
                 p {
-                    font-size: 0.88rem;
+                    color: #cfcfcf;
+                    font-size: 0.92rem;
+                    line-height: 1.8;
+                    margin-bottom: 10px;
                 }
 
                 strong {
+                    display: block;
+                    margin-top: 10px;
+                    color: #fff;
+                    font-size: 0.95rem;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+
+    /* =====================
+   RESPONSIVE
+===================== */
+    @media (max-width: 768px) {
+
+        .services-section {
+            padding: 140px 0 80px;
+
+            .section-title-wrap {
+                margin-bottom: 50px;
+            }
+
+            .main-title {
+                font-size: 2.3rem;
+                line-height: 1.2;
+            }
+
+            .services-modern-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-horizontal-card {
+            padding: 22px;
+
+            .service-vector-space {
+                width: 42px;
+                margin-right: 18px;
+            }
+
+            .service-info {
+                h3 {
+                    font-size: 1.05rem;
+                }
+
+                p {
                     font-size: 0.9rem;
                 }
             }
         }
+
+        .service-modal {
+            padding: 15px;
+
+            .modal-content {
+                padding: 55px 20px 25px;
+                overflow: visible;
+            }
+
+            .modal-header-wrap {
+                flex-direction: column;
+                gap: 12px;
+                margin-bottom: 25px;
+                text-align: center;
+
+                img {
+                    width: 34px;
+                }
+
+                .modal-header-title {
+                    font-size: 1.5rem;
+                    line-height: 1.3;
+                }
+            }
+
+            .close-modal {
+                width: 38px;
+                height: 38px;
+                top: 12px;
+                right: 12px;
+                font-size: 18px;
+            }
+
+            .location-cards-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+            }
+
+            .location-entry-card {
+                max-width: 330px;
+
+                .loc-img {
+                    height: 180px;
+                }
+
+                .loc-content {
+                    padding: 20px;
+
+                    h4 {
+                        font-size: 0.95rem;
+                    }
+
+                    p {
+                        font-size: 0.88rem;
+                    }
+
+                    strong {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
     }
-}
+
     .modal-header-wrap {
         display: flex;
         justify-content: center;
@@ -2859,7 +2869,7 @@ $transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
 /* =====================
    RESPONSIVE
-===================== */
+/* ===================== */
 @media (max-width: 768px) {
     .services-section {
         padding: 140px 0 80px;
@@ -2898,11 +2908,19 @@ $transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .service-modal {
-        padding: 15px;
+        padding: 20px;
+
+        // Позадина со убав заматен ефект зад popup-от
+        background: rgba(0, 0, 0, 0.4) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px);
 
         .modal-content {
             padding: 55px 20px 25px;
             overflow: visible;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .modal-header-wrap {
@@ -2920,23 +2938,35 @@ $transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             }
         }
 
+        // Картичките се редат една под една со простор од страните
         .location-cards-wrapper {
-            flex-direction: column;
+            flex-direction: column !important;
             align-items: center;
-            gap: 18px;
+            gap: 20px;
+            width: 100%;
+            padding: 0 10px;
         }
 
         .location-entry-card {
-            width: 100%;
-            max-width: 330px;
+            width: 100% !important;
+            max-width: 100%;
             min-height: auto;
 
             .loc-img {
                 height: 170px;
             }
 
+            // Текстуалниот дел во картичките каде што се информациите
             .loc-content {
                 padding: 20px;
+
+                // Средување на фонтот и просторот кај бројките и работното време
+                strong,
+                p,
+                span {
+                    letter-spacing: 0.5px !important;
+                    font-family: 'Outfit', sans-serif;
+                }
             }
         }
 
